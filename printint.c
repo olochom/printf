@@ -4,6 +4,7 @@ int _printf(const char *format, ...)
 {
 	int Austine, i;
 	va_list args;
+
 	va_start(args, format);
 
 	Austine = 0;
@@ -18,12 +19,14 @@ int _printf(const char *format, ...)
 			if (format[i] == 'c')
 			{
 				char mwangi = va_arg(args, int);
+
 				putchar(mwangi);
 				Austine++;
 			}
 			else if (format[i] == 's')
 			{
 				char *gwada = va_arg(args, char *);
+
 				while (*gwada)
 				{
 					putchar(*gwada);
@@ -46,5 +49,5 @@ int _printf(const char *format, ...)
 	}
 
 	va_end(args);
-	return Austine;
+	return (Austine);
 }
