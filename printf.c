@@ -26,14 +26,14 @@ int _printf(const char *format, ...)
 				w += print_percent();
 			else
 			{
-				putchar('%');
-				putchar(*format);
+				_putchar('%');
+				_putchar(*format);
 				w += 2;
 			}
 		}
 		else
 		{
-			putchar(*format);
+			_putchar(*format);
 			w++;
 		}
 		format++;

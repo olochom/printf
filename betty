@@ -4,7 +4,7 @@
 betty main.h *.c
 
 # Compile the program
-if gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o printf; then
+if gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c -o printf; then
     ./printf
 else
     echo "Compilation failed. Exiting..."

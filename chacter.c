@@ -10,6 +10,6 @@ int print_char(va_list args)
 {
 	char x = va_arg(args, int);
 
-	putchar(x);
+	_putchar(x);
 	return (1);
 }

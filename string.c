@@ -13,7 +13,7 @@ int print_string(va_list args)
 
 	while (*string)
 	{
-		putchar(*string);
+		_putchar(*string);
 		string++;
 		w++;
 	}
