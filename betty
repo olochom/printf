@@ -1,5 +1,5 @@
 #!/bin/bash
-
+clear
 # Run Betty on source files
 betty main.h *.c
 
