@@ -9,7 +9,7 @@
 int print_string(va_list args)
 {
 	char *string = va_arg(args, char *);
-	int w = 0;
+	unsigned int w = 0;
 
 	while (*string)
 	{

@@ -1,6 +1,7 @@
 #include "main.h"
+
 /**
- * print literal - prints the literal percent symbol
+ * print_percent - prints the literal percent symbol
  *
  * Return: number of characters printed
  */

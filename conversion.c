@@ -10,7 +10,7 @@
 
 char *convert(int b, char *str)
 {
-	int i = 0, s, e, t;
+	unsigned int i = 0, s, e, t;
 
 	if (b == 0)
 	{
