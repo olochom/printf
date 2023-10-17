@@ -8,10 +8,10 @@
  */
 int print_int(va_list args)
 {
-	unsigned int b = va_arg(args, int);
+	int b = va_arg(args, int);
 	char buffer[12];
 	char *str = buffer;
-	unsigned int w = 0;
+	int w = 0;
 
 	convert(b, buffer);
 
