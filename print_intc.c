@@ -17,7 +17,7 @@ unsigned int print_int(va_list args)
 
 	while (*str)
 	{
-		putchr(*str++);
+		_putchar(*str++);
 		w++;
 	}
 
