@@ -9,13 +9,14 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int w = 0, x;
+	int w = 0;
+	int x;
 
 	va_start(args, format);
 
 	for (x = 0; format && format[x] != '\0'; x++)
 	{
-		if (format[x] == '%')
+		if (format[x] == '%' && format[x + 1])
 		{
 			x++;
 			switch (format[x])
