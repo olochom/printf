@@ -9,44 +9,42 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	unsigned int w = 0;
+	unsigned int w = 0, x;
 
 	va_start(args, format);
 
-	while (*format)
+	for (x = 0; format[x] != '\0'; x++)
 	{
-		if (*format == '%')
+		if (format[x] == '%')
 		{
-			format++;
-			switch (*format)
+			x++;
+			switch (format[x])
 			{
-			case 'c': /* Handle characters */
+			case 'c':
 				w += print_char(args);
 				break;
-			case 's': /* Handle strings */
+			case 's':
 				w += print_string(args);
 				break;
-			case '%': /* Handle literal percent */
+			case '%':
 				w += print_percent();
 				break;
 			case 'd':
 			case 'i':
 				w += print_int(args);
 				break;
-			default: /* Handle unspecified specifiers */
-				_putchar('%');
-				_putchar(*format);
-				w += 2;
+			default:
+				x--;
 				break;
 			}
 		}
 		else
 		{
-			_putchar(*format);
+			_putchar(format[x]);
 			w++;
 		}
-		format++;
 	}
+
 	va_end(args);
 	return (w);
 }
