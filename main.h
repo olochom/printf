@@ -12,6 +12,6 @@ int print_percent(void);
 int _printf(const char *format, ...);
 int _putchar(char c);
 char *convert(int b, char *buffer);
-int print_int(va_list args);
+unsigned int print_int(va_list args);
 
 #endif /* MAIN_H */
