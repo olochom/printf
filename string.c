@@ -11,7 +11,7 @@
 int print_string(va_list args)
 {
 	char *string = va_arg(args, char *);
-	int x = 0;
+	int count = 0;
 
 	if (!string)
 		string = "(null)";
@@ -19,8 +19,8 @@ int print_string(va_list args)
 	{
 		_putchar(*string);
 		string++;
-		x++;
+		count++;
 	}
 
-	return (x);
+	return (count);
 }
