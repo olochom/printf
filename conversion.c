@@ -2,15 +2,16 @@
 
 /**
  * convert - Converts an integer to a string.
- * @b: The integer.
- * @str: The string buffer to write to.
+ * @b: The integer to be converted.
+ * @str: The string buffer to which the integer is converted.
  *
  * Return: The buffer with the string representation of the integer.
  */
 
 char *convert(int b, char *str)
 {
-	int i = 0, s, e, t;
+	int i = 0, k, j;
+	int neg = 0;
 
 	if (b == 0)
 	{
@@ -22,24 +23,29 @@ char *convert(int b, char *str)
 	if (b < 0)
 	{
 		str[i++] = '-';
+		neg = 1;
 		b = -b;
 	}
-
-	t = i;
 
 	while (b)
 	{
 		str[i++] = (b % 10) + '0';
 		b /= 10;
 	}
+
 	str[i] = '\0';
 
-	for (s = t, e = i - 1; s < e; s++, e--)
-	{
-		char m = str[s];
+	k = neg;
+	j = i - 1;
 
-		str[s] = str[e];
-		str[e] = m;
+	while (k < j)
+	{
+		char m = str[k];
+
+		str[k] = str[j];
+		str[j] = m;
+		k++;
+		j--;
 	}
 
 	return (str);
