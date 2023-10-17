@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
-	for (x = 0; format[x] != '\0'; x++)
+	for (x = 0; format && format[x] != '\0'; x++)
 	{
 		if (format[x] == '%')
 		{
